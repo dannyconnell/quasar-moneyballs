@@ -9,11 +9,16 @@
           v-for="entry in entries"
           :key="entry.id"
         >
-          <q-item-section>
+          <q-item-section
+            :class="useAmountColorClass(entry.amount)"
+          >
             {{ entry.name }}
           </q-item-section>
 
-          <q-item-section side>
+          <q-item-section
+            :class="useAmountColorClass(entry.amount)"
+            side
+          >
             {{ useCurrencify(entry.amount) }}
           </q-item-section>
         </q-item>
@@ -30,6 +35,7 @@
   
     import { ref } from 'vue'
     import { useCurrencify } from 'src/use/useCurrencify'
+    import { useAmountColorClass } from 'src/use/useAmountColorClass'
 
 
   /*
