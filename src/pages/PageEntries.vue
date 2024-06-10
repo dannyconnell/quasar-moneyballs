@@ -27,8 +27,18 @@
       </q-list>
     </div>
 
-    <q-footer>
-      <div class="row q-pa-sm q-col-gutter-sm">
+    <q-footer
+      class="bg-transparent"
+    >
+      <div class="row q-mb-sm q-px-md q-py-sm shadow-up-3">
+        <div class="col text-grey-7 text-h6">
+          Balance:
+        </div>
+        <div class="col text-grey-7 text-h6 text-right">
+          + $3,999.00
+        </div>
+      </div>
+      <div class="row q-px-sm q-pb-sm q-col-gutter-sm bg-primary">
         <div class="col">
           <q-input
             placeholder="Name"
