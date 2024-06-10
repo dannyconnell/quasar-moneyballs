@@ -23,11 +23,13 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
+      class="bg-primary"
       show-if-above
       bordered
     >
       <q-list>
         <q-item-label
+          class="text-white"
           header
         >
           Essential Links

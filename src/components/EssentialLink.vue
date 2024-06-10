@@ -1,6 +1,7 @@
 <template>
   <q-item
     clickable
+    class="text-white"
     tag="a"
     target="_blank"
     :href="props.link"
@@ -14,7 +15,7 @@
 
     <q-item-section>
       <q-item-label>{{ props.title }}</q-item-label>
-      <q-item-label caption>{{ props.caption }}</q-item-label>
+      <q-item-label class="text-white" caption>{{ props.caption }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>
