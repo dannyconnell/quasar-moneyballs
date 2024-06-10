@@ -1,1 +1,9 @@
-// app global css in SCSS form
+// drawer nav
+.q-drawer {
+  .q-item {
+    opacity: 0.6;
+    &.q-router-link--exact-active {
+      opacity: 1;
+    }
+  }
+}
