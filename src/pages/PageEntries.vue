@@ -9,7 +9,7 @@
       <q-slide-item
         v-for="entry in entries"
         :key="entry.id"
-        @right="onRight"
+        @right="onEntrySlideRight"
         left-color="positive"
         right-color="negative"
       >
@@ -102,9 +102,16 @@
   */
   
     import { ref, computed, reactive } from 'vue'
-    import { uid } from 'quasar'
+    import { uid, useQuasar } from 'quasar'
     import { useCurrencify } from 'src/use/useCurrencify'
     import { useAmountColorClass } from 'src/use/useAmountColorClass'
+
+
+  /*
+    quasar
+  */
+  
+    const $q = useQuasar()  
 
 
   /*
@@ -172,6 +179,32 @@
       addEntryFormReset()
     }
   
+
+  /*
+    slide items
+  */
+  
+    const onEntrySlideRight = ({ reset }) => {
+      $q.dialog({
+        title: 'Delete Entry',
+        message: 'Delete this entry?',
+        cancel: true,
+        persistent: true,
+        ok: {
+          label: 'Delete',
+          color: 'negative',
+          noCaps: true
+        },
+        cancel: {
+          color: 'primary',
+          noCaps: true
+        }
+      }).onOk(() => {
+        console.log('>>>> OK')
+      }).onCancel(() => {
+        reset()
+      })
+    }
     
 
 </script>
