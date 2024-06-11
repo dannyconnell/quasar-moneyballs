@@ -220,6 +220,10 @@
     const deleteEntry = entryId => {
       const index = entries.value.findIndex(entry => entry.id === entryId)
       entries.value.splice(index, 1)
+      $q.notify({
+        message: 'Entry deleted',
+        position: 'top'
+      })
     }
     
 
