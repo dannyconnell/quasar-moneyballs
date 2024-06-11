@@ -41,7 +41,10 @@
           {{ useCurrencify(balance) }}
         </div>
       </div>
-      <div class="row q-px-sm q-pb-sm q-col-gutter-sm bg-primary">
+      <q-form
+        @submit="addEntry"
+        class="row q-px-sm q-pb-sm q-col-gutter-sm bg-primary"
+      >
         <div class="col">
           <q-input
             v-model="addEntryForm.name"
@@ -67,10 +70,11 @@
           <q-btn
             color="primary"
             icon="add"
+            type="submit"
             round
           />
         </div>
-      </div>
+      </q-form>
     </q-footer>
   </q-page>
 </template>
@@ -82,6 +86,7 @@
   */
   
     import { ref, computed, reactive } from 'vue'
+    import { uid } from 'quasar'
     import { useCurrencify } from 'src/use/useCurrencify'
     import { useAmountColorClass } from 'src/use/useAmountColorClass'
 
@@ -133,6 +138,15 @@
       name: '',
       amount: null
     })
+
+    const addEntry = () => {
+      const newEntry = {
+        id: uid(),
+        name: addEntryForm.name,
+        amount: addEntryForm.amount
+      }
+      entries.value.push(newEntry)
+    }
   
     
 
