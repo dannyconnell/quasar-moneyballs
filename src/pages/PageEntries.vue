@@ -48,6 +48,7 @@
         <div class="col">
           <q-input
             v-model="addEntryForm.name"
+            ref="nameRef"
             placeholder="Name"
             bg-color="white"
             outlined
@@ -134,6 +135,8 @@
     add entry
   */
 
+    const nameRef = ref(null)
+
     const addEntryFormDefault = {
       name: '',
       amount: null
@@ -145,6 +148,7 @@
 
     const addEntryFormReset = () => {
       Object.assign(addEntryForm, addEntryFormDefault)
+      nameRef.value.focus()
     }
 
     const addEntry = () => {
