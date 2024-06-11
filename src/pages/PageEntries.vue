@@ -56,7 +56,7 @@
         </div>
         <div class="col">
           <q-input
-            v-model="addEntryForm.amount"
+            v-model.number="addEntryForm.amount"
             input-class="text-right"
             placeholder="Amount"
             bg-color="white"
