@@ -6,19 +6,19 @@
         separator
       >
 
-      <q-slide-item
-        v-for="entry in storeEntries.entries"
-        :key="entry.id"
-        @right="onEntrySlideRight($event, entry)"
-        left-color="positive"
-        right-color="negative"
-      >
-        <!-- <template v-slot:left>
-          <q-icon name="done" />
-        </template> -->
-        <template v-slot:right>
-          <q-icon name="delete" />
-        </template>
+        <q-slide-item
+          v-for="entry in storeEntries.entries"
+          :key="entry.id"
+          @right="onEntrySlideRight($event, entry)"
+          left-color="positive"
+          right-color="negative"
+        >
+          <!-- <template v-slot:left>
+            <q-icon name="done" />
+          </template> -->
+          <template v-slot:right>
+            <q-icon name="delete" />
+          </template>
 
           <q-item>
             <q-item-section
@@ -101,8 +101,8 @@
     imports
   */
   
-    import { ref, computed, reactive } from 'vue'
-    import { uid, useQuasar } from 'quasar'
+    import { ref, reactive } from 'vue'
+    import { useQuasar } from 'quasar'
     import { useStoreEntries } from 'src/stores/storeEntries'
     import { useCurrencify } from 'src/use/useCurrencify'
     import { useAmountColorClass } from 'src/use/useAmountColorClass'
@@ -120,45 +120,6 @@
   */
   
     const $q = useQuasar()  
-
-
-  /*
-    entries
-  */
-  
-    const entries = ref([
-      {
-        id: 'id1',
-        name: 'Salary',
-        amount: 4999.99
-      },
-      {
-        id: 'id2',
-        name: 'Rent',
-        amount: -999
-      },
-      {
-        id: 'id3',
-        name: 'Phone',
-        amount: -14.99
-      },
-      {
-        id: 'id4',
-        name: 'Unknown',
-        amount: 0
-      },
-    ])
-
-
-  /*
-    balance
-  */
-  
-    const balance = computed(() => {
-      return entries.value.reduce((accumulator, { amount }) => {
-        return accumulator + amount
-      }, 0)
-    })
 
 
   /*
@@ -183,6 +144,7 @@
 
     const addEntryFormSubmit = () => {
       storeEntries.addEntry(addEntryForm)
+      addEntryFormReset()
     }
   
 
@@ -217,20 +179,5 @@
         reset()
       })
     }
-
-
-  /*
-    delete entry
-  */
-  
-    const deleteEntry = entryId => {
-      const index = entries.value.findIndex(entry => entry.id === entryId)
-      entries.value.splice(index, 1)
-      $q.notify({
-        message: 'Entry deleted',
-        position: 'top'
-      })
-    }
-    
 
 </script>
