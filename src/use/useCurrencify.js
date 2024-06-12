@@ -9,7 +9,7 @@ export function useCurrencify(amount) {
         amountPositive = Math.abs(amount),
         amountFormatted = amountPositive.toLocaleString('en-US', {
           minimumFractionDigits: 2,
-          maximumFractionDigis: 2
+          maximumFractionDigits: 2
         })
 
   return `${ posNegSymbol } ${ currencySymbol } ${ amountFormatted }`
