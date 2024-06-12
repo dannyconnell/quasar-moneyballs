@@ -57,7 +57,7 @@
         </div>
       </div>
       <q-form
-        @submit="addEntry"
+        @submit="addEntryFormSubmit"
         class="row q-px-sm q-pb-sm q-col-gutter-sm bg-primary"
       >
         <div class="col">
@@ -181,10 +181,8 @@
       nameRef.value.focus()
     }
 
-    const addEntry = () => {
-      const newEntry = Object.assign({}, addEntryForm, { id: uid() })
-      entries.value.push(newEntry)
-      addEntryFormReset()
+    const addEntryFormSubmit = () => {
+      storeEntries.addEntry(addEntryForm)
     }
   
 

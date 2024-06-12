@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
+import { uid } from 'quasar'
 
 export const useStoreEntries = defineStore('entries', () => {
 
@@ -46,12 +47,27 @@ export const useStoreEntries = defineStore('entries', () => {
     actions
   */
   
-    
+    const addEntry = addEntryForm => {
+      const newEntry = Object.assign({}, addEntryForm, { id: uid() })
+      entries.value.push(newEntry)
+    }
+
 
   /*
     return
   */
   
-    return { entries, balance }
+    return { 
+
+      // state
+      entries,
+
+      // getters
+      balance,
+
+      // actions
+      addEntry
+
+    }
     
 })
