@@ -212,7 +212,7 @@
           noCaps: true
         }
       }).onOk(() => {
-        deleteEntry(entry.id)
+        storeEntries.deleteEntry(entry.id)
       }).onCancel(() => {
         reset()
       })
