@@ -50,10 +50,10 @@
           Balance:
         </div>
         <div
-          :class="useAmountColorClass(balance)"
+          :class="useAmountColorClass(storeEntries.balance)"
           class="col text-h6 text-right"
         >
-          {{ useCurrencify(balance) }}
+          {{ useCurrencify(storeEntries.balance) }}
         </div>
       </div>
       <q-form

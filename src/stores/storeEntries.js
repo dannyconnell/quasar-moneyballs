@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 export const useStoreEntries = defineStore('entries', () => {
 
@@ -35,7 +35,12 @@ export const useStoreEntries = defineStore('entries', () => {
     getters
   */
   
-    
+    const balance = computed(() => {
+      return entries.value.reduce((accumulator, { amount }) => {
+        return accumulator + amount
+      }, 0)
+    })
+
 
   /*
     actions
@@ -47,6 +52,6 @@ export const useStoreEntries = defineStore('entries', () => {
     return
   */
   
-    return { entries }
+    return { entries, balance }
     
 })
