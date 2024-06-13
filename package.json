@@ -11,9 +11,11 @@
     "build": "quasar build"
   },
   "dependencies": {
-    "pinia": "^2.0.11",
     "@quasar/extras": "^1.16.4",
+    "pinia": "^2.0.11",
     "quasar": "^2.16.0",
+    "sortablejs": "^1.15.2",
+    "sortablejs-vue3": "^1.2.11",
     "vue": "^3.4.18",
     "vue-router": "^4.0.12"
   },
