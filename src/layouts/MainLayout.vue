@@ -18,6 +18,15 @@
           </div>
         </q-toolbar-title>
 
+        <q-btn 
+          v-if="$route.fullPath === '/'"
+          @click="storeEntries.options.sort = !storeEntries.options.sort"
+          :label="!storeEntries.options.sort ? 'Sort' : 'Done'"
+          flat
+          no-caps
+          dense
+        />
+
       </q-toolbar>
     </q-header>
 
@@ -53,11 +62,14 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useStoreEntries } from 'src/stores/storeEntries'
 import NavLink from 'components/Nav/NavLink.vue'
 
 defineOptions({
   name: 'MainLayout'
 })
+
+const storeEntries = useStoreEntries()
 
 const navLinks = [
   {

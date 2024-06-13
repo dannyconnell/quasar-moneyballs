@@ -14,6 +14,7 @@
 
         <Sortable
           :list="storeEntries.entries"
+          :options="{ handle: '.handle' }"
           item-key="id"
           tag="div"
         >
