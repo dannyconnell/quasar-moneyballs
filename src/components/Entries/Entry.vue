@@ -18,6 +18,7 @@
       >
         {{ entry.name }}
         <q-popup-edit
+          @save="onNameUpdate"
           :model-value="entry.name"
           v-slot="scope"
           :cover="false"
@@ -44,6 +45,7 @@
       >
         {{ useCurrencify(entry.amount) }}
         <q-popup-edit
+          @save="onAmountUpdate"
           :model-value="entry.amount"
           v-slot="scope"
           :cover="false"
@@ -136,6 +138,19 @@
       }).onCancel(() => {
         reset()
       })
+    }
+
+
+  /*
+    name & amount update
+  */
+  
+    const onNameUpdate = value => {
+      storeEntries.updateEntry(props.entry.id, { name: value })
+    }
+
+    const onAmountUpdate = value => {
+      storeEntries.updateEntry(props.entry.id, { amount: value })
     }
 
 </script>
