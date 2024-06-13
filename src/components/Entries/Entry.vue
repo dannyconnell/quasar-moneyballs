@@ -1,12 +1,13 @@
 <template>
   <q-slide-item
+    @left="onEntrySlideLeft"
     @right="onEntrySlideRight"
     left-color="positive"
     right-color="negative"
   >
-    <!-- <template v-slot:left>
+    <template v-slot:left>
       <q-icon name="done" />
-    </template> -->
+    </template>
     <template v-slot:right>
       <q-icon name="delete" />
     </template>
@@ -112,6 +113,11 @@
     slide items
   */
   
+    const onEntrySlideLeft = ({ reset }) => {
+      storeEntries.updateEntry(props.entry.id, { paid: !props.entry.paid })
+      reset()
+    }
+
     const onEntrySlideRight = ({ reset }) => {
       $q.dialog({
         title: 'Delete Entry',
