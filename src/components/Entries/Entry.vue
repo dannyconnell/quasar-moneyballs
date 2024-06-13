@@ -43,6 +43,26 @@
         side
       >
         {{ useCurrencify(entry.amount) }}
+        <q-popup-edit
+          :model-value="entry.amount"
+          v-slot="scope"
+          :cover="false"
+          :offset="[16,12]"
+          anchor="top left"
+          label-set="Ok"
+          auto-save
+          buttons
+        >
+          <q-input
+            v-model.number="scope.value"
+            @keyup.enter="scope.set"
+            input-class="text-weight-bold letter-spacing-none text-right"
+            type="number"
+            step="0.01"
+            autofocus
+            dense
+          />
+        </q-popup-edit>
       </q-item-section>
     </q-item>
 
