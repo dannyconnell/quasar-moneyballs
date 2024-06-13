@@ -1,3 +1,8 @@
+// global
+.letter-spacing-none {
+  letter-spacing: 0;
+}
+
 // drawer nav
 .q-drawer {
   .q-item {
@@ -12,4 +17,11 @@
 input::-webkit-outer-spin-button, 
 input::-webkit-inner-spin-button {
   margin-left: 10px;
+}
+
+// q-popup-edit-buttons
+.q-popup-edit__buttons {
+  .q-btn {
+    text-transform: none;
+  }
 }

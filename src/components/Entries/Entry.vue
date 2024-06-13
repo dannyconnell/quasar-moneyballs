@@ -17,6 +17,24 @@
         :class="useAmountColorClass(entry.amount)"
       >
         {{ entry.name }}
+        <q-popup-edit
+          :model-value="entry.name"
+          v-slot="scope"
+          :cover="false"
+          :offset="[16,12]"
+          anchor="top left"
+          label-set="Ok"
+          auto-save
+          buttons
+        >
+          <q-input
+            v-model="scope.value"
+            @keyup.enter="scope.set"
+            input-class="text-weight-bold letter-spacing-none"
+            autofocus
+            dense
+          />
+        </q-popup-edit>
       </q-item-section>
 
       <q-item-section
