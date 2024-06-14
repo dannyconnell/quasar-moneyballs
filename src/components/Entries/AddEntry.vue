@@ -9,6 +9,7 @@
         ref="nameRef"
         placeholder="Name"
         bg-color="white"
+        v-select-all
         outlined
         dense
       />
@@ -21,6 +22,7 @@
         bg-color="white"
         type="number"
         step="0.01"
+        v-select-all
         outlined
         dense
       />
@@ -44,6 +46,7 @@
   
     import { ref, reactive } from 'vue'
     import { useStoreEntries } from 'src/stores/storeEntries'
+    import vSelectAll from 'src/directives/directiveSelectAll'
 
 
   /*

@@ -37,6 +37,7 @@
             v-model="scope.value"
             @keyup.enter="scope.set"
             input-class="text-weight-bold letter-spacing-none"
+            v-select-all
             autofocus
             dense
           />
@@ -69,6 +70,7 @@
             input-class="text-weight-bold letter-spacing-none text-right"
             type="number"
             step="0.01"
+            v-select-all
             autofocus
             dense
           />
@@ -100,6 +102,7 @@
     import { useStoreEntries } from 'src/stores/storeEntries'
     import { useCurrencify } from 'src/use/useCurrencify'
     import { useAmountColorClass } from 'src/use/useAmountColorClass'
+    import vSelectAll from 'src/directives/directiveSelectAll'
 
 
   /*
