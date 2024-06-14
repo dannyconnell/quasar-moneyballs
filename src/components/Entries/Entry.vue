@@ -13,9 +13,11 @@
       <q-icon name="delete" />
     </template>
 
-    <q-item>
+    <q-item
+      class="row"
+    >
       <q-item-section
-        class="text-weight-bold"
+        class="text-weight-bold col"
         :class="[
           useAmountColorClass(entry.amount),
           { 'text-strike' : entry.paid }
@@ -45,7 +47,7 @@
       </q-item-section>
 
       <q-item-section
-        class="text-weight-bold"
+        class="text-weight-bold relative-position col"
         :class="[
           useAmountColorClass(entry.amount)
         ]"
@@ -62,7 +64,8 @@
           v-slot="scope"
           :cover="false"
           :offset="[16,12]"
-          anchor="top left"
+          anchor="top right"
+          self="top right"
           label-set="Ok"
           auto-save
           buttons
