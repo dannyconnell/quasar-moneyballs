@@ -37,7 +37,13 @@
     <q-footer
       class="bg-transparent"
     >
-      <Balance />
+      <transition
+        appear
+        enter-active-class="animated fadeInUp"
+        leave-active-class="animated fadeOutDown"
+      >
+        <Balance v-if="storeEntries.entries.length" />
+      </transition>
       <AddEntry />
     </q-footer>
   </q-page>
