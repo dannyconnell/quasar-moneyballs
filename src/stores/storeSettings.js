@@ -8,7 +8,8 @@ export const useStoreSettings = defineStore('settings', () => {
   */
   
     const settings = reactive({
-      promptToDelete: true
+      promptToDelete: true,
+      showRunningBalance: true // set to false later motherflipper
     })
 
 
