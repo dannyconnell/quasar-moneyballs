@@ -80,6 +80,12 @@ export const useStoreEntries = defineStore('entries', () => {
       Object.assign(entries.value[index], updates)
     }
 
+    const sortEnd = ({ oldIndex, newIndex }) => {
+      const movedEntry = entries.value[oldIndex]
+      entries.value.splice(oldIndex, 1)
+      entries.value.splice(newIndex, 0, movedEntry)
+    }
+
 
   /*
     helpers
@@ -107,7 +113,8 @@ export const useStoreEntries = defineStore('entries', () => {
       // actions
       addEntry,
       deleteEntry,
-      updateEntry
+      updateEntry,
+      sortEnd
 
     }
     
