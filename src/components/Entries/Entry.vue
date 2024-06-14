@@ -80,13 +80,13 @@
         </q-popup-edit>
         <q-chip
           v-if="storeSettings.settings.showRunningBalance"
-          :class="useAmountColorClass(12.56)"
+          :class="useAmountColorClass(storeEntries.runningBalances[index])"
           class="running-balance absolute-bottom-right"
           size="9px"
           outline
           dense
         >
-          {{ useCurrencify(12.56) }}
+          {{ useCurrencify(storeEntries.runningBalances[index]) }}
         </q-chip>
       </q-item-section>
 
@@ -134,6 +134,10 @@
     const props = defineProps({
       entry: {
         type: Object,
+        required: true
+      },
+      index: {
+        type: Number,
         required: true
       }
     })  
