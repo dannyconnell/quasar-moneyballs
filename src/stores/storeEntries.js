@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { ref, computed, reactive } from 'vue'
-import { uid, Notify } from 'quasar'
+import { ref, computed, reactive, watch } from 'vue'
+import { uid, Notify, LocalStorage } from 'quasar'
 
 export const useStoreEntries = defineStore('entries', () => {
 
@@ -34,6 +34,10 @@ export const useStoreEntries = defineStore('entries', () => {
         paid: false
       },
     ])
+
+    watch(entries.value, () => {
+      saveEntries()
+    })
 
     const options = reactive({
       sort: false
@@ -101,6 +105,15 @@ export const useStoreEntries = defineStore('entries', () => {
       entries.value.splice(newIndex, 0, movedEntry)
     }
 
+    const saveEntries = () => {
+      LocalStorage.set('entries', entries.value)
+    }
+
+    const loadEntries = () => {
+      const savedEntries = LocalStorage.getItem('entries')
+      if (savedEntries) Object.assign(entries.value, savedEntries)
+    }
+
 
   /*
     helpers
@@ -130,7 +143,8 @@ export const useStoreEntries = defineStore('entries', () => {
       addEntry,
       deleteEntry,
       updateEntry,
-      sortEnd
+      sortEnd,
+      loadEntries
 
     }
     
