@@ -9,30 +9,30 @@ export const useStoreEntries = defineStore('entries', () => {
   */
   
     const entries = ref([
-      {
-        id: 'id1',
-        name: 'Salary',
-        amount: 4999.99,
-        paid: true
-      },
-      {
-        id: 'id2',
-        name: 'Rent',
-        amount: -999,
-        paid: false
-      },
-      {
-        id: 'id3',
-        name: 'Phone bill',
-        amount: -14.99,
-        paid: false
-      },
-      {
-        id: 'id4',
-        name: 'Unknown',
-        amount: 0,
-        paid: false
-      },
+      // {
+      //   id: 'id1',
+      //   name: 'Salary',
+      //   amount: 4999.99,
+      //   paid: true
+      // },
+      // {
+      //   id: 'id2',
+      //   name: 'Rent',
+      //   amount: -999,
+      //   paid: false
+      // },
+      // {
+      //   id: 'id3',
+      //   name: 'Phone bill',
+      //   amount: -14.99,
+      //   paid: false
+      // },
+      // {
+      //   id: 'id4',
+      //   name: 'Unknown',
+      //   amount: 0,
+      //   paid: false
+      // },
     ])
 
     watch(entries.value, () => {
