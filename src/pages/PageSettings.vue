@@ -26,6 +26,17 @@
             />
           </q-item-section>
         </q-item>
+        
+        <q-item tag="label" v-ripple>
+          <q-item-section>
+            <q-input
+              v-model="storeSettings.settings.currencySymbol"
+              label="Currency Symbol"
+              v-select-all
+              outlined
+            />
+          </q-item-section>
+        </q-item>
 
       </q-list>
     </div>
@@ -39,6 +50,7 @@
   */
   
     import { useStoreSettings } from 'src/stores/storeSettings'
+    import vSelectAll from 'src/directives/directiveSelectAll'
 
 
   /*
