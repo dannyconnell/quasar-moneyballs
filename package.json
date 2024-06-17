@@ -6,7 +6,7 @@
   "author": "Danny Connell",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0",
+    "icons": "icongenie generate -i app-icon.png --skip-trim",
     "dev": "quasar dev",
     "build": "quasar build"
   },
