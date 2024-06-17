@@ -3,16 +3,6 @@
   letter-spacing: 0;
 }
 
-// dark overrides
-.body--dark {
-  .bg-primary, .q-layout__section--marginal {
-    background-color: $primary-dark !important;
-  }
-  .q-drawer {
-    border: none;
-  }
-}
-
 // drawer nav
 .q-drawer {
   .q-item {
@@ -40,9 +30,6 @@ input::-webkit-inner-spin-button {
 .entries {
   .q-slide-item {
     border: 1px solid rgba(0, 0, 0, 0.12);
-    .body--dark & {
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
     &:not(:first-child) {
       margin-top: -1px;
     }

@@ -13,7 +13,7 @@ export const useStoreEntries = defineStore('entries', () => {
         id: 'id1',
         name: 'Salary',
         amount: 4999.99,
-        paid: true
+        paid: false
       },
       {
         id: 'id2',

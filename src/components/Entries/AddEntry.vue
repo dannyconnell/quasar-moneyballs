@@ -8,7 +8,7 @@
         v-model="addEntryForm.name"
         ref="nameRef"
         placeholder="Name"
-        :bg-color="useLightOrDark('white', 'black')"
+        bg-color="white"
         v-select-all
         outlined
         dense
@@ -19,7 +19,7 @@
         v-model.number="addEntryForm.amount"
         input-class="text-right"
         placeholder="Amount"
-        :bg-color="useLightOrDark('white', 'black')"
+        bg-color="white"
         type="number"
         step="0.01"
         v-select-all
@@ -46,7 +46,6 @@
   
     import { ref, reactive } from 'vue'
     import { useStoreEntries } from 'src/stores/storeEntries'
-    import { useLightOrDark } from 'src/use/useLightOrDark'
     import vSelectAll from 'src/directives/directiveSelectAll'
 
 

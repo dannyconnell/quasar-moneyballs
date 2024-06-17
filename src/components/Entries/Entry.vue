@@ -4,11 +4,7 @@
     @right="onEntrySlideRight"
     left-color="positive"
     right-color="negative"
-    :class="
-      !entry.paid
-        ? useLightOrDark('bg-white', 'bg-black')
-        : useLightOrDark('bg-grey-2', 'bg-grey-10')
-    "
+    :class="{ 'bg-grey-2' : entry.paid }"
   >
     <template v-slot:left>
       <q-icon name="done" />
@@ -123,7 +119,6 @@
     import { useStoreSettings } from 'src/stores/storeSettings'
     import { useCurrencify } from 'src/use/useCurrencify'
     import { useAmountColorClass } from 'src/use/useAmountColorClass'
-    import { useLightOrDark } from 'src/use/useLightOrDark'
     import vSelectAll from 'src/directives/directiveSelectAll'
 
 
