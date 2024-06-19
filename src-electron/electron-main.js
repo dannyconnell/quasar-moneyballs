@@ -15,7 +15,7 @@
   // needed in case process is undefined under Linux
   const platform = process.platform || os.platform(),
         menu = Menu.buildFromTemplate(menuTemplate)
-  let mainWindow
+  export let mainWindow
 
 
 /*
