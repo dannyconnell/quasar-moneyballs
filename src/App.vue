@@ -5,6 +5,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useQuasar } from 'quasar'
 import { useStoreSettings } from 'src/stores/storeSettings'
 import { useStoreEntries } from 'src/stores/storeEntries'
 
@@ -14,15 +15,18 @@ defineOptions({
 
 const storeSettings = useStoreSettings(),
       storeEntries = useStoreEntries(),
+      $q = useQuasar(),
       router = useRouter()
 
 onMounted(() => {
   storeSettings.loadSettings()
   storeEntries.loadEntries()
 
-  ipcRenderer.on('show-settings', () => {
-    router.push('/settings')
-  })
+  if ($q.platform.is.electron) {
+    ipcRenderer.on('show-settings', () => {
+      router.push('/settings')
+    })
+  }
 
 })
 

@@ -53,6 +53,24 @@
           :key="link.title"
           v-bind="link"
         />
+
+        <q-item
+          v-if="$q.platform.is.electron"
+          @click="quitApp"
+          clickable
+          class="text-white absolute-bottom"
+          tag="a"
+        >
+          <q-item-section
+            avatar
+          >
+            <q-icon name="power_settings_new" />
+          </q-item-section>
+
+          <q-item-section>
+            <q-item-label>Quit</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -64,6 +82,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useQuasar } from 'quasar'
 import { useStoreEntries } from 'src/stores/storeEntries'
 import { useLightOrDark } from 'src/use/useLightOrDark'
 import NavLink from 'components/Nav/NavLink.vue'
@@ -72,7 +91,8 @@ defineOptions({
   name: 'MainLayout'
 })
 
-const storeEntries = useStoreEntries()
+const $q = useQuasar(),
+      storeEntries = useStoreEntries()
 
 const navLinks = [
   {
@@ -91,5 +111,26 @@ const leftDrawerOpen = ref(false)
 
 function toggleLeftDrawer () {
   leftDrawerOpen.value = !leftDrawerOpen.value
+}
+
+const quitApp = () => {
+  $q.dialog({
+    title: 'Confirm',
+    message: 'Really quit Moneyballs?',
+    cancel: true,
+    persistent: true,
+    html: true,
+    ok: {
+      label: 'Quit',
+      color: 'negative',
+      noCaps: true
+    },
+    cancel: {
+      color: 'primary',
+      noCaps: true
+    }
+  }).onOk(() => {
+    console.log('quit the app')
+  })
 }
 </script>
