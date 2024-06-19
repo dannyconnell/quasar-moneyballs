@@ -10,7 +10,8 @@
     "dev": "quasar dev",
     "dev:mac": "quasar dev -m electron",
     "build": "quasar build",
-    "build:mac": "quasar build -m electron"
+    "build:mac": "quasar build -m electron",
+    "build:win": "quasar build -m electron --target win32"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
