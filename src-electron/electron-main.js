@@ -27,8 +27,11 @@
      */
     mainWindow = new BrowserWindow({
       icon: path.resolve(__dirname, 'icons/icon.png'), // tray icon
-      width: 1000,
-      height: 600,
+      width: 1480, // just for danny
+      height: 990, // just for danny
+      minWidth: 768,
+      minHeight: 512,
+      zoomFactor: 7.0, // just for danny
       useContentSize: true,
       webPreferences: {
         contextIsolation: true,
