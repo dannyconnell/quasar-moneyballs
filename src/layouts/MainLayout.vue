@@ -130,7 +130,7 @@ const quitApp = () => {
       noCaps: true
     }
   }).onOk(() => {
-    console.log('quit the app')
+    if ($q.platform.is.electron) ipcRenderer.send('quit-app')
   })
 }
 </script>
