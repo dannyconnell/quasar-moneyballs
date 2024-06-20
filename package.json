@@ -6,7 +6,7 @@
   "author": "Danny Connell",
   "private": true,
   "scripts": {
-    "icons": "icongenie generate -i app-icon.png --skip-trim",
+    "icons": "icongenie generate -i app-icon.png --skip-trim --theme-color 00695c --splashscreen-icon-ratio 25",
     "dev": "quasar dev",
     "dev:mac": "quasar dev -m electron",
     "dev:ios": "quasar dev -m capacitor -T ios",
