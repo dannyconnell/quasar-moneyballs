@@ -15,6 +15,7 @@
     "build:win": "quasar build -m electron --target win32"
   },
   "dependencies": {
+    "@capacitor/dialog": "^6.0.0",
     "@quasar/extras": "^1.16.4",
     "pinia": "^2.0.11",
     "quasar": "^2.16.0",
