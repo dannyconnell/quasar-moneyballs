@@ -71,3 +71,10 @@ input::-webkit-inner-spin-button {
     padding-bottom: env(safe-area-inset-bottom);
   }
 }
+
+// add entry form
+.add-entry-form {
+  .q-field--error .q-field__bottom {
+    color: $negative-light;
+  }
+}

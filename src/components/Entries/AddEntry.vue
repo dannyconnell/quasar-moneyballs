@@ -1,7 +1,7 @@
 <template>
   <q-form
     @submit="addEntryFormSubmit"
-    class="row q-px-sm q-pb-sm q-col-gutter-sm bg-primary"
+    class="add-entry-form row q-px-sm q-pb-sm q-col-gutter-sm bg-primary"
   >
     <div class="col">
       <q-input
@@ -17,6 +17,7 @@
     <div class="col">
       <q-input
         v-model.number="addEntryForm.amount"
+        :rules="[val => typeof val === 'number' || 'Enter a valid number']"
         input-class="text-right"
         placeholder="Amount"
         :bg-color="useLightOrDark('white', 'black')"
