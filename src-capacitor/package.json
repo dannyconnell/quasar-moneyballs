@@ -1,0 +1,13 @@
+{
+  "name": "quasar-moneyballs",
+  "version": "0.0.1",
+  "description": "A Quasar Project",
+  "author": "Danny Connell",
+  "private": true,
+  "dependencies": {
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/ios": "^6.1.0"
+  }
+}

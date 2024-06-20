@@ -1,7 +1,7 @@
 <template>
   <div
     class="row q-mb-sm q-px-md q-py-sm items-center"
-    :class="useLightOrDark('shadow-up-3', 'bg-black')"
+    :class="useLightOrDark('bg-white shadow-up-3', 'bg-black')"
   >
     <div class="col text-grey-7 text-h6">
       Balance:
