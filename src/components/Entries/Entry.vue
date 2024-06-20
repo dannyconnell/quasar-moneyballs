@@ -66,6 +66,7 @@
         <q-popup-edit
           @save="onAmountUpdate"
           :model-value="entry.amount"
+          :validate="val => typeof val === 'number'"
           v-slot="scope"
           :cover="false"
           :offset="[16,12]"
@@ -78,6 +79,7 @@
           <q-input
             v-model.number="scope.value"
             @keyup.enter="scope.set"
+            :rules="[val => typeof val === 'number' || 'Enter a valid number']"
             input-class="text-weight-bold letter-spacing-none text-right"
             type="number"
             step="0.01"

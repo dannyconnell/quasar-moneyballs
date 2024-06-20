@@ -34,8 +34,6 @@
 
       </q-list>
 
-      <pre style="font-size: 9px">{{ storeEntries.entries }}</pre>
-
     </div>
 
     <q-footer
