@@ -45,7 +45,7 @@
             @keyup.enter="scope.set"
             input-class="text-weight-bold letter-spacing-none"
             v-select-all
-            autofocus
+            v-autofocus
             dense
           />
         </q-popup-edit>
@@ -84,7 +84,7 @@
             type="number"
             step="0.01"
             v-select-all
-            autofocus
+            v-autofocus
             dense
           />
         </q-popup-edit>
@@ -128,6 +128,7 @@
     import { useAmountColorClass } from 'src/use/useAmountColorClass'
     import { useLightOrDark } from 'src/use/useLightOrDark'
     import vSelectAll from 'src/directives/directiveSelectAll'
+    import vAutofocus from 'src/directives/directiveAutofocus'
 
 
   /*
