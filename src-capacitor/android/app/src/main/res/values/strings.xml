@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Moneyballs</string>
+    <string name="title_activity_main">Moneyballs</string>
+    <string name="package_name">com.dannyconnell.moneyballs</string>
+    <string name="custom_url_scheme">com.dannyconnell.moneyballs</string>
+</resources>
